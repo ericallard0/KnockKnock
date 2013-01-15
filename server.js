@@ -38,7 +38,7 @@ require('http').createServer(function (request, response) {
 
 function pingNextPerson(ips, id, response){
 	if(id <= ips.ip.length-1){
-	exec("ping "+ips.ip[id]+" -c 1", function(error, stdout, stderr) {
+	exec("ping "+ips.ip[id]+" -c 2 -W 2", function(error, stdout, stderr) {
 
 				var name = ips.name[id];
 				console.log('exec' + name);
