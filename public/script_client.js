@@ -1,5 +1,9 @@
 (function(){
-	
+    
+    if($(window).width() > 1025 ){
+         $('#container').css("width", "70%");
+    }
+    
     var IsHeAtHome = function (name){
         var personDiv = $('#' + name);
         var h2Element = personDiv.children().last();
