@@ -1,4 +1,7 @@
 var nodeStatic = require('node-static'),
+jsdom = require('jsdom'),
+fs = require('fs'),
+sys = require('sys'),
 fserver = new nodeStatic.Server('./public'),
 exec = require('child_process').exec;
 
@@ -35,10 +38,28 @@ require('http').createServer(function (request, response) {
     }else if(req[0] == "ajax-loader.gif"){
         fserver.serveFile('/ajax-loader.gif',200,{},request,response);
     }else{
-        fserver.serveFile('/index.html',200,{},request,response);
+        readIndex(function (indexHtml) {
+            jsdom.env({
+                html: indexHtml,
+                scripts: ['./public/jquery-1.6.4.min.js', './public/script_client.js']
+            }, function (err, window) {
+                var $ = window.jQuery;
+
+                $('body').append("<div class='testing'>Hello World</div>");
+                console.log($(".testing").html()); // outputs Hello World
+            });
+        })
+        
     }
 
 }).listen(8888);
+
+function readIndex(callback) {
+    fs.readFile("./public/index.html","utf-8",  function (err, content) {
+        if (err) return callback(err)
+        callback(content)
+    })
+}
 
 
 function pingAPerson(name,response){
@@ -47,7 +68,7 @@ function pingAPerson(name,response){
 }
 
 function ping(id,response){
-   return exec("ping "+ips.ip[id]+" -c 2 -W 2", function(error, stdout, stderr) {
+    return exec("ping "+ips.ip[id]+" -c 2 -W 2", function(error, stdout, stderr) {
         var name = ips.name[id];
         console.log('exec ' + name);
         var the6thElementOf2ndeLineOfTheResultOfPing = stdout.split('\n')[1].split(' ')[5];
