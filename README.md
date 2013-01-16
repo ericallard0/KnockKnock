@@ -25,9 +25,11 @@ Visit
 * A smart way to choose the port to listen to
 * Ways to set the ping parameters like time-out
 * Performance improvements (ping is very slow, especially if there is no answer)
-> Bigger improvements:
-* One ajax requests per IP to ping (improves performance a lot)
-* Ability for the client to choose which IP to ping by selecting them in a list
+
+* ~~One ajax requests per IP to ping~~
+* ~~Ability for the client to choose which IP to ping by selecting them in a list~~
+* Load the list IPs/names/email from the server
+* CSS bug while loader is displayed
 
 > Even bigger improvements:
 
