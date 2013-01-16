@@ -31,6 +31,6 @@ Visit
 * Load the list IPs/names/email from the server
 * CSS bug while loader is displayed
 
-> Even bigger improvements:
+> Bigger improvements:
 
 * (if it's possible in a limited amount of time) list all connected IPs on the network and match them with the given ones
