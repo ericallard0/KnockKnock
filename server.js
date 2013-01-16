@@ -16,7 +16,7 @@ require('http').createServer(function (request, response) {
         request.addListener('end', function () {
             setTimeout(function(){
                 response.writeHead(200, {
-                    'Content-Type': 'text/html'
+                    'Content-Type': 'text/plain'
                 });
                 response.write("time out");
                 response.end();
