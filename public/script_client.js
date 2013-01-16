@@ -11,7 +11,7 @@
             if(data === "time out"){
                 $(h2Element).html("Time Out ... Sorry!");
             }else{                 
-                $(h2Element).html(data);
+                $(h2Element).html(data).addClass(data);
             }
             personDiv.children().last().remove();   
             personDiv.append(h2Element);

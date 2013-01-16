@@ -50,3 +50,11 @@ img{
 	height : 50px;
 	padding : 20px;
 }
+
+.Present{
+    color : #77EA7C;
+}
+
+.Absent{
+    color : #E82B25;
+}
