@@ -11,7 +11,7 @@ var ips = JSON.parse(personsFile);
 require('http').createServer(function (request, response) {
     var req = request.url.split("/");
     req.shift();
-    if(req[0] == "api"){
+    if(req.length === 2 && req[0] == "api"){
         var name = req[1];
         request.addListener('end', function () {
             setTimeout(function(){
