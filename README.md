@@ -1,7 +1,7 @@
 # KnockKnock
 > (who's there?)
 
-KnockKnock is a simple tool to view who's connected on you're network.
+KnockKnock is a simple tool to view who's connected on your network.
 You can define your home network's usually used IPs like your phone or your room-mate’s phone and see
 whether it is connected to the network or not. In order to spy on him.
 
