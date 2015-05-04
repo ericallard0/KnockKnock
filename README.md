@@ -1,4 +1,5 @@
 # KnockKnock
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/ericallard0/KnockKnock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > (who's there?)
 
 KnockKnock is a simple tool to view who's connected on your network.
